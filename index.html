@@ -47,6 +47,19 @@
             gap: 10px;
         }
 
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
+            border-radius: 6px;
+        }
+
         .logo-text {
             color: white;
             font-size: 2.5rem;
@@ -244,6 +257,99 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Brands Section */
+        .brands {
+            padding: 4rem 0;
+            background: #ffffff;
+        }
+
+        .brand-carousel {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+
+        .brand-track {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            width: max-content;
+            animation: brandScroll 25s linear infinite;
+        }
+
+        .brand-item {
+            flex: 0 0 160px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+            filter: grayscale(100%);
+            opacity: 0.9;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-4px);
+            filter: grayscale(0%);
+            opacity: 1;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+
+        .brand-logo {
+            width: 140px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1f2937;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #eef2f3, #e0eafc);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .brand-item img {
+            max-height: 60px;
+            max-width: 130px;
+            object-fit: contain;
+        }
+
+        .brand-link {
+            width: 140px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-logo.variant-1 { background: linear-gradient(135deg, #fff1eb, #ace0f9); }
+        .brand-logo.variant-2 { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
+        .brand-logo.variant-3 { background: linear-gradient(135deg, #f6d365, #fda085); }
+        .brand-logo.variant-4 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+        .brand-logo.variant-5 { background: linear-gradient(135deg, #fdfbfb, #ebedee); }
+        .brand-logo.variant-6 { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
+        .brand-logo.variant-7 { background: linear-gradient(135deg, #d9afd9, #97d9e1); }
+        .brand-logo.variant-8 { background: linear-gradient(135deg, #f8ffae, #43c6ac); }
+        .brand-logo.variant-9 { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+
+        @keyframes brandScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .brand-carousel:hover .brand-track {
+            animation-play-state: paused;
+        }
+
         /* Contact Section */
         .contact {
             padding: 4rem 0;
@@ -383,6 +489,17 @@
             .container {
                 padding: 0 15px;
             }
+
+            .brand-item {
+                flex-basis: 120px;
+                height: 70px;
+            }
+
+            .brand-logo {
+                width: 110px;
+                height: 50px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -391,10 +508,9 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <div>
-                    <div class="logo-text">DRS</div>
-                    <div class="logo-subtitle">SUPPLEMENTS</div>
-                </div>
+                <a href="#home" class="logo-link" aria-label="DRS Supplements Home">
+                    <img src="/logo.png" alt="DRS Supplements" class="logo-img">
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -499,6 +615,37 @@
                     </div>
                     <h3>Multivitamins</h3>
                     <p>Essential vitamins and minerals to support overall health and wellness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="brands">
+        <div class="container">
+            <h2 class="section-title">Available Brands</h2>
+            <div class="brand-carousel" aria-label="Brand logos carousel">
+                <div class="brand-track">
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Americanz Muscle"><img src="https://via.placeholder.com/140x60?text=Americanz%20Muscle" alt="Americanz Muscle"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Optimum Nutrition"><img src="https://via.placeholder.com/140x60?text=Optimum%20Nutrition" alt="Optimum Nutrition"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Atom"><img src="https://via.placeholder.com/140x60?text=Atom" alt="Atom"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Muscle Tech"><img src="https://via.placeholder.com/140x60?text=Muscle%20Tech" alt="Muscle Tech"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="William Bonac Signature"><img src="https://via.placeholder.com/140x60?text=William%20Bonac" alt="William Bonac Signature"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="QNT"><img src="https://via.placeholder.com/140x60?text=QNT" alt="QNT"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="BOLT"><img src="https://via.placeholder.com/140x60?text=BOLT" alt="BOLT"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Labrada"><img src="https://via.placeholder.com/140x60?text=Labrada" alt="Labrada"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Exalt"><img src="https://via.placeholder.com/140x60?text=Exalt" alt="Exalt"></a></div>
+
+                    <!-- Duplicate for seamless scroll -->
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Americanz Muscle"><img src="https://via.placeholder.com/140x60?text=Americanz%20Muscle" alt="Americanz Muscle"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Optimum Nutrition"><img src="https://via.placeholder.com/140x60?text=Optimum%20Nutrition" alt="Optimum Nutrition"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Atom"><img src="https://via.placeholder.com/140x60?text=Atom" alt="Atom"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Muscle Tech"><img src="https://via.placeholder.com/140x60?text=Muscle%20Tech" alt="Muscle Tech"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="William Bonac Signature"><img src="https://via.placeholder.com/140x60?text=William%20Bonac" alt="William Bonac Signature"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="QNT"><img src="https://via.placeholder.com/140x60?text=QNT" alt="QNT"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="BOLT"><img src="https://via.placeholder.com/140x60?text=BOLT" alt="BOLT"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Labrada"><img src="https://via.placeholder.com/140x60?text=Labrada" alt="Labrada"></a></div>
+                    <div class="brand-item"><a class="brand-link" href="#" aria-label="Exalt"><img src="https://via.placeholder.com/140x60?text=Exalt" alt="Exalt"></a></div>
                 </div>
             </div>
         </div>
